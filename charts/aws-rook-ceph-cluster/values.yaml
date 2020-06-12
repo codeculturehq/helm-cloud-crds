@@ -1,0 +1,17 @@
+image:
+  tag: v14.2.9
+
+monitoring:
+  enabled: true
+  storage: 5Gi
+
+dashboard:
+  enabled: true
+  ssl: true
+
+crashCollector:
+  enabled: false
+
+storage:
+  volumes:
+    size: 50Gi
