@@ -15,3 +15,4 @@ crashCollector:
 storage:
   volumes:
     size: 50Gi
+    class: gp2

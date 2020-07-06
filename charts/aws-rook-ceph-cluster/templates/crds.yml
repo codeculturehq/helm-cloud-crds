@@ -17,7 +17,7 @@ spec:
     # size appropriate for monitor data will be used.
     volumeClaimTemplate:
       spec:
-        storageClassName: gp2
+        storageClassName: {{ .Values.storage.volumes.class }}
         resources:
           requests:
             storage: {{ .Values.monitoring.storage }}
@@ -92,7 +92,7 @@ spec:
                 requests:
                   storage: {{.Values.storage.volumes.size}}
               # IMPORTANT: Change the storage class depending on your environment (e.g. local-storage, gp2)
-              storageClassName: gp2
+              storageClassName:  {{ .Values.storage.volumes.class }}
               volumeMode: Block
               accessModes:
                 - ReadWriteOnce

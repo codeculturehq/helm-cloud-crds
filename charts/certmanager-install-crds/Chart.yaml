@@ -1,5 +1,0 @@
-apiVersion: v1
-name: certmanager-install-crds
-description: Install a ceph cluster CRD inside the cluster
-version: 0.1.0
-appVersion: 0.1.0
