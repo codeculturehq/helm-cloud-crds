@@ -1,0 +1,15 @@
+acme:
+  email: foo@foobar.cloud
+  privateKeySecret: certificate-key
+  server: https://acme-staging-v02.api.letsencrypt.org/directory
+  solvers:
+    - dns01:
+        route53:
+          region: eu-central-1
+          accessKeyID: ABC124
+          secretAccessKeySecretRef:
+            key: access-secret
+            name: prod-route53-credentials-secret
+      selector:
+        dnsZones:
+        - foobar.cloud
