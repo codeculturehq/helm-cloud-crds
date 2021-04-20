@@ -1,5 +1,5 @@
 image:
-  tag: v14.2.9
+  tag: v16.2.1
 
 monitoring:
   enabled: true
