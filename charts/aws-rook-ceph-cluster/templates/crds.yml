@@ -58,7 +58,7 @@ spec:
         # zone (or other set of nodes with a common label) so that the OSDs will end up on different
         # nodes. This would require adding nodeAffinity to the placement here.
         placement:
-{{ .Values.storage.placement | nindent 10}}
+        {{ .Values.storage.placement | toYaml | indent 10}}
         volumeClaimTemplates:
           - metadata:
               name: data
