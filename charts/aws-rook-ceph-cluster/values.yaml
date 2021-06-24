@@ -16,3 +16,30 @@ storage:
   volumes:
     size: 50Gi
     class: gp2
+  placement: |-
+    podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                    - rook-ceph-osd
+                  - key: app
+                    operator: In
+                    values:
+                      - rook-ceph-osd-prepare
+              topologyKey: kubernetes.io/hostname
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - rook-ceph-osd
+                  - rook-ceph-osd-prepare
