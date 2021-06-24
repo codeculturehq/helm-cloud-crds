@@ -18,20 +18,20 @@ storage:
     class: gp2
   placement:
     podAntiAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
                     - rook-ceph-osd
-                  - key: app
-                    operator: In
-                    values:
-                      - rook-ceph-osd-prepare
-              topologyKey: kubernetes.io/hostname
+                - key: app
+                  operator: In
+                  values:
+                    - rook-ceph-osd-prepare
+            topologyKey: kubernetes.io/hostname
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
