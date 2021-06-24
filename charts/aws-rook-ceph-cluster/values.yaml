@@ -16,7 +16,7 @@ storage:
   volumes:
     size: 50Gi
     class: gp2
-  placement: |-
+  placement:
     podAntiAffinity:
         preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 100
