@@ -6,10 +6,10 @@ metadata:
 spec:
   metadataPool:
     replicated:
-      size: 3
+      size: {{ .Values.storage.nodes }}
   dataPools:
     - replicated:
-        size: 3
+        size: {{ .Values.storage.nodes }}
   preservePoolsOnDelete: true
   metadataServer:
     activeCount: 1
