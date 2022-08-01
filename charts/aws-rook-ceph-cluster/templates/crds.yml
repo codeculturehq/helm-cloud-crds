@@ -23,7 +23,7 @@ spec:
             storage: {{ .Values.monitoring.storage }}
   {{- end}}
   cephVersion:
-    image: ceph/ceph:{{ .Values.image.tag}}
+    image: quay.io/ceph/ceph:{{ .Values.image.tag}}
     allowUnsupported: false
   skipUpgradeChecks: false
   continueUpgradeAfterChecksEvenIfNotHealthy: false
