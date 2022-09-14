@@ -4,6 +4,7 @@ image:
 monitoring:
   enabled: true
   storage: 5Gi
+  allowMultiplePerNode: false
 
 dashboard:
   enabled: true

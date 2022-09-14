@@ -8,7 +8,7 @@ spec:
   {{- if .Values.monitoring.enabled }}
   mon:
     count: {{ .Values.storage.nodes }}
-    allowMultiplePerNode: false
+    allowMultiplePerNode: {{ .Values.monitoring.allowMultiplePerNode }}
     # A volume claim template can be specified in which case new monitors (and
     # monitors created during fail over) will construct a PVC based on the
     # template for the monitor's primary storage. Changes to the template do not
